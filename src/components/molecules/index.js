@@ -1,1 +1,1 @@
-export * from './ShapeInteractive'
+export * from './InteractiveShape'

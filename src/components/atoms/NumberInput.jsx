@@ -21,12 +21,13 @@ const NumberInputStyled = styled.input`
   }
 `;
 
-export const NumberInput = ({ type = "number", defaultValue = "100" }) => {
+export const NumberInput = ({ type = "number", defaultValue = "100" , setSize }) => {
   return (
     <>
       <NumberInputStyled
         type={type}
         defaultValue={defaultValue}
+        onChange={e => setSize(e.target.value)}
       ></NumberInputStyled>
     </>
   );

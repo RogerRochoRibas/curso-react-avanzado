@@ -18,12 +18,13 @@ const ColorInputStyled = styled.input`
   }
 `;
 
-export const ColorInput = ({ type = "color", defaultValue = "#0088CC" }) => {
+export const ColorInput = ({ type = "color", defaultValue = "#0088CC", setColor }) => {
   return (
     <>
       <ColorInputStyled
         type={type}
         defaultValue={defaultValue}
+        onChange={e => setColor(e.target.value)}
       ></ColorInputStyled>
     </>
   );
