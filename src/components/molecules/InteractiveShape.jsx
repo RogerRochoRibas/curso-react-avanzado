@@ -8,15 +8,15 @@ export const InteractiveShape = ({ children, defaultColor, defaultSize }) => {
 
   return (
     <>
-      <Text color={color} fontSize={size}>
-        {children}
-      </Text>
       <Text>
         Size: <NumberInput defaultValue={size} setSize={setSize}></NumberInput>
       </Text>
       <Text>
         Color:
         <ColorInput defaultValue={color} setColor={setColor}></ColorInput>
+      </Text>
+      <Text color={color} fontSize={size}>
+        {children}
       </Text>
     </>
   );
