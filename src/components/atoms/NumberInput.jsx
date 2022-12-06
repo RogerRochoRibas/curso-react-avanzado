@@ -26,6 +26,7 @@ export const NumberInput = ({ type = "number", defaultValue = "100" , setSize })
     <>
       <NumberInputStyled
         type={type}
+        name="NumberInput"
         defaultValue={defaultValue}
         onChange={e => setSize(+e.target.value)}
       ></NumberInputStyled>
