@@ -1,0 +1,11 @@
+{
+    "extends": ["airbnb", "airbnb/hooks", "prettier"],
+    "rules": {
+        "react/prop-types": "warn",
+        "no-alert":"warn",
+        "no-debugger": "warn",
+        "no-undef": "warn",
+        "import/prefer-default-export": "off"
+
+    }
+}

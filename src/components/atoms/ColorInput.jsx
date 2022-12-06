@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const ColorInputStyled = styled.input`
   height: 30px;
   width: 60px;
   border-radius: 0.5rem;
   border: 1px solid #b0b0b0;
-
   &:hover {
     border: 1px solid;
   }
@@ -16,17 +15,13 @@ const ColorInputStyled = styled.input`
   &:focus {
     outline: 0 none;
   }
-`;
+`
 
-export const ColorInput = ({ type = "color", defaultValue = "#0088CC", setColor }) => {
-  return (
-    <>
+export const ColorInput = ({ type = 'color', defaultValue = '#0088CC', setColor }) => {
       <ColorInputStyled
         type={type}
-        name="ColorInput"
+        name='ColorInput'
         defaultValue={defaultValue}
         onChange={e => setColor(e.target.value)}
-      ></ColorInputStyled>
-    </>
-  );
+      />
 };

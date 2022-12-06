@@ -1,14 +1,14 @@
-import { ColorInput, NumberInput, Text } from "../atoms";
-import React from "react";
-import { useState } from "react";
+import { React, useState } from 'react'
+import ColorInput from '../atoms/ColorInput'
+import NumberInput from '../atoms/NumberInput'
+import Text from '../atoms/Text'
 
-export const InteractiveShape = ({
+export default function InteractiveShape ({
   children,
   defaultColor,
   defaultSize,
   modifyShape,
-  shape,
-}) => {
+}) {
   const [size, setSize] = useState(defaultSize);
   const [color, setColor] = useState(defaultColor);
 
@@ -21,16 +21,16 @@ export const InteractiveShape = ({
           setSize={setSize}
           modifyShape={modifyShape}
           parameter="size"
-        ></NumberInput>
+        />
       </Text>
       <Text>
-        Color:
+        Color:{" "}
         <ColorInput
           defaultValue={color}
           setColor={setColor}
           modifyShape={modifyShape}
           parameter="color"
-        ></ColorInput>
+        />
       </Text>
       <Text color={color} fontSize={size}>
         {children}

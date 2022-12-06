@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const NumberInputStyled = styled.input`
   height: 18px;
@@ -19,17 +19,17 @@ const NumberInputStyled = styled.input`
   &:focus {
     outline: 0 none;
   }
-`;
+`
 
-export const NumberInput = ({ type = "number", defaultValue = "100" , setSize }) => {
-  return (
-    <>
+export const NumberInput = ({
+  type = "number",
+  defaultValue = "100",
+  setSize,
+}) => {
       <NumberInputStyled
         type={type}
         name="NumberInput"
         defaultValue={defaultValue}
-        onChange={e => setSize(+e.target.value)}
-      ></NumberInputStyled>
-    </>
-  );
-};
+        onChange={(e) => setSize(+e.target.value)}
+      />
+}
