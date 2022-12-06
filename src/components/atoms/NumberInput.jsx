@@ -21,14 +21,20 @@ const NumberInputStyled = styled.input`
   }
 `;
 
-export const NumberInput = ({ type = "number", defaultValue = "100" , setSize }) => {
+export const NumberInput = ({
+  type = "number",
+  defaultValue = "100",
+  setSize,
+}) => {
   return (
     <>
+      {/* Falta la prop value */}
       <NumberInputStyled
         type={type}
         name="NumberInput"
         defaultValue={defaultValue}
-        onChange={e => setSize(+e.target.value)}
+        // onChange debería ser más generico a este nivel. setSize es demasiado especifico y solo se podra reusar para un proposito si fuese a crece la app.
+        onChange={(e) => setSize(+e.target.value)}
       ></NumberInputStyled>
     </>
   );

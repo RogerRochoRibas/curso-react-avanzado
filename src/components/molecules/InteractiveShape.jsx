@@ -7,7 +7,7 @@ export const InteractiveShape = ({
   defaultColor,
   defaultSize,
   modifyShape,
-  shape,
+  shape, // esta prop no se esta utilizando
 }) => {
   const [size, setSize] = useState(defaultSize);
   const [color, setColor] = useState(defaultColor);

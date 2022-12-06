@@ -18,14 +18,19 @@ const ColorInputStyled = styled.input`
   }
 `;
 
-export const ColorInput = ({ type = "color", defaultValue = "#0088CC", setColor }) => {
+export const ColorInput = ({
+  type = "color", // Si se llama ColorInput debería de sobrar el Value
+  defaultValue = "#0088CC",
+  setColor,
+}) => {
   return (
     <>
       <ColorInputStyled
         type={type}
         name="ColorInput"
         defaultValue={defaultValue}
-        onChange={e => setColor(e.target.value)}
+        // onChange debería ser más generico y falta la prop value
+        onChange={(e) => setColor(e.target.value)}
       ></ColorInputStyled>
     </>
   );
