@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export const ShapesPanel = () => {
+  // Debería de ser shape y setShape, no Shape. Utiliza camelCase
   const [Shape, setShape] = useState({
     shape1: { color: "#0000ff", size: 70 },
     shape2: { color: "#00ff15", size: 110 },
@@ -12,11 +13,12 @@ export const ShapesPanel = () => {
 
   function modifyShape(shape, parameter, value) {
     let newShape = { ...Shape };
-    newShape.shape.parameter = value;
+    newShape.shape.parameter = value; // Aquí parece que estas mutando el estado y además shape no es una propiedad de Shape. Deberías mejroar también la sintaxis para que sea más fácil. Sospecho aquí esta el error principal.
     setShape(newShape);
   }
 
   useEffect(() => {
+    console.log("Shape", Shape);
     if (
       Shape.shape1.color === Shape.shape2.color &&
       Shape.shape1.color === Shape.shape3.color
@@ -39,7 +41,7 @@ export const ShapesPanel = () => {
         modifyShape={modifyShape}
         shape="shape1"
       >
-        ▲
+        {/* Interesante usar las formas de esta manera. */}▲
       </InteractiveShape>
       <InteractiveShape
         defaultColor={Shape.shape2.color}
