@@ -1,40 +1,42 @@
-import { React, useState } from 'react'
-import ColorInput from '../atoms/ColorInput'
-import NumberInput from '../atoms/NumberInput'
-import Text from '../atoms/Text'
+import { React, useState, useEffect } from 'react'
+import { ColorInput, NumberInput, Text } from '../atoms'
 
-export default function InteractiveShape ({
+export function InteractiveShape({
   children,
   defaultColor,
   defaultSize,
-  modifyShape,
+  setShape,
+  shape,
 }) {
-  const [size, setSize] = useState(defaultSize);
-  const [color, setColor] = useState(defaultColor);
+  const [size, setSize] = useState(defaultSize)
+  const [color, setColor] = useState(defaultColor)
+
+  useEffect(() => {
+    const newShape = { ...shape }
+    newShape.size = size
+    setShape(newShape)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [size])
+
+  useEffect(() => {
+    const newShape = { ...shape }
+    newShape.color = color
+    setShape(newShape)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color])
 
   return (
     <>
       <Text>
-        Size:{" "}
-        <NumberInput
-          defaultValue={size}
-          setSize={setSize}
-          modifyShape={modifyShape}
-          parameter="size"
-        />
+        Size: <NumberInput defaultValue={defaultSize} handleChange={setSize} />
       </Text>
       <Text>
-        Color:{" "}
-        <ColorInput
-          defaultValue={color}
-          setColor={setColor}
-          modifyShape={modifyShape}
-          parameter="color"
-        />
+        Color:
+        <ColorInput defaultValue={defaultColor} handleChange={setColor} />
       </Text>
       <Text color={color} fontSize={size}>
         {children}
       </Text>
     </>
-  );
-};
+  )
+}

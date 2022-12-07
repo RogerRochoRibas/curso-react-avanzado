@@ -6,13 +6,15 @@ import { fonts } from '../../styles/fonts'
 
 const TextStyled = styled.p`
   margin: 5px;
-`;
+`
 
-export const Text = ({
+export function Text({
   children,
   color = colors.font.base,
   fontSize = dimensions.font.base,
   fontFamily = fonts.helvetica,
-}) => {
+}) {
+  return (
     <TextStyled style={{ color, fontSize, fontFamily }}>{children}</TextStyled>
+  )
 }

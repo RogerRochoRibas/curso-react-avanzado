@@ -6,6 +6,7 @@ const ColorInputStyled = styled.input`
   width: 60px;
   border-radius: 0.5rem;
   border: 1px solid #b0b0b0;
+
   &:hover {
     border: 1px solid;
   }
@@ -17,11 +18,13 @@ const ColorInputStyled = styled.input`
   }
 `
 
-export const ColorInput = ({ type = 'color', defaultValue = '#0088CC', setColor }) => {
-      <ColorInputStyled
-        type={type}
-        name='ColorInput'
-        defaultValue={defaultValue}
-        onChange={e => setColor(e.target.value)}
-      />
-};
+export function ColorInput({ defaultValue = '#0088CC', handleChange }) {
+  return (
+    <ColorInputStyled
+      type="color"
+      name="ColorInput"
+      defaultValue={defaultValue}
+      onChange={(e) => handleChange(e.target.value)}
+    />
+  )
+}

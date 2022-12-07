@@ -1,48 +1,57 @@
 import { React, useState, useEffect } from 'react'
-import InteractiveShape from '../molecules/InteractiveShape';
+import { InteractiveShape } from '../molecules'
 
-export default function ShapesPanel() {
-  const [Shape] = useState({
-    shape1: { color: '#0000ff', size: 70 },
-    shape2: { color: '#00ff15', size: 110 },
-    shape3: { color: '#ff3333', size: 100 },
-  });
-  
+export function ShapesPanel() {
+  const [triangle, setTriangle] = useState({
+    color: '#0000ff',
+    size: 70,
+  })
+  const [circle, setCircle] = useState({
+    color: '#00ff15',
+    size: 110,
+  })
+  const [square, setSquare] = useState({
+    color: '#ff3333',
+    size: 100,
+  })
+
   useEffect(() => {
-    if (
-      Shape.shape1.color === Shape.shape2.color &&
-      Shape.shape1.color === Shape.shape3.color
-    ) {
-      alert('All shapes are the same color!');
+    if (triangle.color === circle.color && triangle.color === square.color) {
+      alert('All shapes are the same color!')
     }
-    if (
-      Shape.shape1.size === Shape.shape2.size &&
-      Shape.shape1.size === Shape.shape3.size
-    ) {
-      alert('All shapes are the same size!');
+  }, [triangle.color, circle.color, square.color])
+  useEffect(() => {
+    if (triangle.size === circle.size && triangle.size === square.size) {
+      alert('All shapes are the same size!')
     }
-  } ,[Shape.shape1.color, Shape.shape1.size, Shape.shape2.color, Shape.shape2.size, Shape.shape3.color, Shape.shape3.size]);
+  }, [triangle.size, circle.size, square.size])
 
   return (
     <>
       <InteractiveShape
-        defaultColor={Shape.shape1.color}
-        defaultSize={Shape.shape1.size}
+        defaultColor="#0000ff"
+        defaultSize={70}
+        setShape={setTriangle}
+        shape={triangle}
       >
         ▲
       </InteractiveShape>
       <InteractiveShape
-        defaultColor={Shape.shape2.color}
-        defaultSize={Shape.shape2.size}
+        defaultColor="#00ff15"
+        defaultSize={110}
+        setShape={setCircle}
+        shape={circle}
       >
         ●
       </InteractiveShape>
       <InteractiveShape
-        defaultColor={Shape.shape3.color}
-        defaultSize={Shape.shape3.size}
+        defaultColor="#ff3333"
+        defaultSize={100}
+        setShape={setSquare}
+        shape={square}
       >
         ■
       </InteractiveShape>
     </>
-  );
-};
+  )
+}
