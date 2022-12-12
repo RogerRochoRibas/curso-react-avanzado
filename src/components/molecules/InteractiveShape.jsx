@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import { ColorInput, NumberInput, Text } from '../atoms'
 
+// En este nivel (molecules) deberías de crear un InputNumberGroup y InputColorGroup que combine Label+InputNumber y Label+InputColor
 export function InteractiveShape({
   children,
   defaultColor,
@@ -27,6 +28,7 @@ export function InteractiveShape({
 
   return (
     <>
+      {/* Aquí deberías de tener un label con htmlFor, y al input le faltan id y name. */}
       <Text>
         Size: <NumberInput defaultValue={defaultSize} handleChange={setSize} />
       </Text>
