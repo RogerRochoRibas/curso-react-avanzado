@@ -2,7 +2,7 @@ import React from 'react';
 import { colors } from './styles/colors';
 import { dimensions } from './styles/dimensions';
 import { Text } from './components/atoms/Text';
-import { ShapesPanel } from './components/organisms/ShapesPanel';
+import { ShapesPanel } from './pages/ShapesPanel';
 
 function App() {
   return (

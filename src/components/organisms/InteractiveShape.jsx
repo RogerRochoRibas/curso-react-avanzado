@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from 'react'
-import { ColorInput, NumberInput, Text } from '../atoms'
+import { Text } from '../atoms'
+import InputNumberGroup from '../molecules/InputNumberGroup'
+import InputColorGroup from '../molecules/InputColorGroup'
 
 export function InteractiveShape({
   children,
@@ -27,13 +29,20 @@ export function InteractiveShape({
 
   return (
     <>
-      <Text>
-        Size: <NumberInput defaultValue={defaultSize} handleChange={setSize} />
-      </Text>
-      <Text>
-        Color:
-        <ColorInput defaultValue={defaultColor} handleChange={setColor} />
-      </Text>
+      <InputNumberGroup
+        defaultValue={defaultSize}
+        handleChange={setSize}
+        id="size"
+      >
+        Size:{' '}
+      </InputNumberGroup>
+      <InputColorGroup
+        defaultValue={defaultColor}
+        handleChange={setColor}
+        id="color"
+      >
+        Color:{' '}
+      </InputColorGroup>
       <Text color={color} fontSize={size}>
         {children}
       </Text>

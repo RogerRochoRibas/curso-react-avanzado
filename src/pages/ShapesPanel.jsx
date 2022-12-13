@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-import { InteractiveShape } from '../molecules'
+import { InteractiveShape } from '../components/organisms/InteractiveShape'
 
 export function ShapesPanel() {
   const [triangle, setTriangle] = useState({
