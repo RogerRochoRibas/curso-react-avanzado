@@ -18,12 +18,14 @@ const ColorInputStyled = styled.input`
   }
 `
 
+// Al tener name definido por defecto y tener varios inputs, vas a tener problemas porque esta repetido.
 export function ColorInput({ defaultValue = '#0088CC', handleChange, id }) {
   return (
     <ColorInputStyled
       type="color"
       name="ColorInput"
       defaultValue={defaultValue}
+      // Renombrar handleChange por por onChange => onChange={onChange}
       onChange={(e) => handleChange(e.target.value)}
       id={id}
     />
