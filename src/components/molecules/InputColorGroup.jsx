@@ -5,14 +5,14 @@ export default function InputColorGroup({
   children,
   id,
   defaultValue,
-  handleChange,
+  onChange,
 }) {
   return (
     <p>
       <Label id={id}>{children}</Label>
       <ColorInput
         defaultValue={defaultValue}
-        handleChange={handleChange}
+        onChange={onChange}
         id={id}
       />
     </p>

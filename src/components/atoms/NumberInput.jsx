@@ -21,13 +21,13 @@ const NumberInputStyled = styled.input`
   }
 `
 
-export function NumberInput({ defaultValue = '100', handleChange, id }) {
+export function NumberInput({ defaultValue = '100', onChange, id }) {
   return (
     <NumberInputStyled
       type="number"
-      name="NumberInput"
+      name={id}
       defaultValue={defaultValue}
-      onChange={(e) => handleChange(+e.target.value)}
+      onChange={(e) => onChange(+e.target.value)}
       id={id}
     />
   )

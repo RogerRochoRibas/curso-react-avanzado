@@ -5,14 +5,14 @@ export default function InputNumberGroup({
   children,
   id,
   defaultValue,
-  handleChange,
+  onChange,
 }) {
   return (
     <p>
       <Label id={id}>{children}</Label>
       <NumberInput
         defaultValue={defaultValue}
-        handleChange={handleChange}
+        onChange={onChange}
         id={id}
       />
     </p>

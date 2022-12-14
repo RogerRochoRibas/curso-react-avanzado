@@ -18,13 +18,13 @@ const ColorInputStyled = styled.input`
   }
 `
 
-export function ColorInput({ defaultValue = '#0088CC', handleChange, id }) {
+export function ColorInput({ defaultValue = '#0088CC', onChange, id }) {
   return (
     <ColorInputStyled
       type="color"
-      name="ColorInput"
+      name={id}
       defaultValue={defaultValue}
-      onChange={(e) => handleChange(e.target.value)}
+      onChange={(e) => onChange(e.target.value)}
       id={id}
     />
   )
