@@ -4,6 +4,7 @@ import { Label, ColorInput } from '../atoms'
 export default function InputColorGroup({
   children,
   id,
+  //  defaultValue no se usa
   defaultValue,
   handleChange,
 }) {
@@ -11,7 +12,7 @@ export default function InputColorGroup({
     <p>
       <Label id={id}>{children}</Label>
       <ColorInput
-        defaultValue={defaultValue}
+        // Renombrar handleChange por por onChange => onChange={onChange}
         handleChange={handleChange}
         id={id}
       />
